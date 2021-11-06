@@ -15,7 +15,7 @@ public class FixedButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(Pressed);
     }
 
     public void OnPointerDown(PointerEventData eventData)

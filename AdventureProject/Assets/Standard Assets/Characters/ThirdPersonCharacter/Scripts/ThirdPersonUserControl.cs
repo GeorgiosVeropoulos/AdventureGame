@@ -17,6 +17,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float Hinput;
         [HideInInspector]
         public float Vinput;
+        public bool Attack;
         
         private void Start()
         {
@@ -43,6 +44,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+            
         }
 
 
