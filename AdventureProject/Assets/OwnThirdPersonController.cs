@@ -21,6 +21,7 @@ public class OwnThirdPersonController : MonoBehaviour
     public bool isGrounded;
     public bool combo;
     public int combostep;
+    public bool stopmove = true;
     //public CameraController camcontrol;
  
 
@@ -37,11 +38,12 @@ public class OwnThirdPersonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         CameraAngleX += Touchfield.TouchDist.x * CameraAngleSpeed;
         Camera.main.transform.position = transform.position + Quaternion.AngleAxis(CameraAngleX, Vector3.up) * new Vector3(0, 3, CameraDistance);
         Camera.main.transform.rotation = Quaternion.LookRotation(transform.position + Vector3.up * 2f - Camera.main.transform.position, Vector3.up);
         //anim.SetBool("Attack", false);
-        if (Physics.Raycast(transform.position - new Vector3(0,-0.5f,0), Vector3.down, 1f))
+        if (Physics.Raycast(transform.position - new Vector3(0,-0.5f,0), Vector3.down, 0.6f))
 		{
             
             Debug.Log("Grounded");
@@ -51,30 +53,41 @@ public class OwnThirdPersonController : MonoBehaviour
             var vel = Quaternion.AngleAxis(CameraAngleX + 180, Vector3.up) * Input * 4f;
 
            
+            if(stopmove == false)
+			{
+                Rigidbody.velocity = new Vector3(vel.x, Rigidbody.velocity.y, vel.z);
+                transform.rotation = Quaternion.AngleAxis(CameraAngleX + 180 + Vector3.SignedAngle(Vector3.forward,
+                    Input.normalized + Vector3.forward * 0.001f, Vector3.up), Vector3.up);
+                anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
+            }
+			else
+			{
+                Rigidbody.velocity = new Vector3(0, 0, 0);
+				anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
+                
+			}
             
-            Rigidbody.velocity = new Vector3(vel.x, Rigidbody.velocity.y, vel.z);
-            transform.rotation = Quaternion.AngleAxis(CameraAngleX + 180 + Vector3.SignedAngle(Vector3.forward,
-                Input.normalized + Vector3.forward * 0.001f, Vector3.up), Vector3.up);
 
-           
+            
             //if (Attack.Pressed == true)
             //{
             //    anim.SetBool("Attack", true);
             //}
 
-            anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
+            
         }
 		else
 		{
             Debug.Log("AIR");
             anim.SetBool("isGround", false);
-		}
+            //Rigidbody.velocity = new Vector3(5f, Rigidbody.velocity.y, 5f);
+            anim.SetFloat("Speed", 2f);
+        }
 
-        
+        Debug.Log(transform.rotation);
+       
 
-        
-        
-        
+
     }
 
     public void AttackAnim()

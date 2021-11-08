@@ -958,6 +958,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: snapX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!224 &611396633 stripped
@@ -6228,6 +6233,7 @@ MonoBehaviour:
   isGrounded: 0
   combo: 0
   combostep: 0
+  stopmove: 1
 --- !u!1 &94372018270897857
 GameObject:
   m_ObjectHideFlags: 0
