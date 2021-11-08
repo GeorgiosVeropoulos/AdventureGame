@@ -84,7 +84,7 @@ public class OwnThirdPersonController : MonoBehaviour
             anim.SetFloat("Speed", 2f);
         }
 
-        Debug.Log(transform.rotation);
+        
        
 
 
@@ -95,6 +95,7 @@ public class OwnThirdPersonController : MonoBehaviour
         if (combostep == 0)
         {
             anim.Play("Attack");
+            anim.SetBool("Attack", true);
             combostep = 1;
             return;
         }
@@ -131,5 +132,6 @@ public class OwnThirdPersonController : MonoBehaviour
 	{
         combo = false;
         combostep = 0;
-	}
+        anim.SetBool("Attack", false);
+    }
 }
