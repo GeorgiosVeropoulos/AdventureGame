@@ -288,6 +288,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GruntPolyart
       objectReference: {fileID: 0}
+    - target: {fileID: 388476415, guid: 7df524699deb44341b3693c8538df185, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ac616b10307c2084c8f9a0dfc6d50c6e, type: 2}
     - target: {fileID: 388476416, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1811,7 +1815,6 @@ MonoBehaviour:
   Player: {fileID: 92119008690864319}
   oldlook: {fileID: 1891670432}
   startingPosition: {fileID: 1691447173}
-  speed: 1
   minDist: 2
   maxDist: 10
 --- !u!136 &885126309
@@ -1841,7 +1844,7 @@ NavMeshAgent:
   m_Speed: 2
   m_Acceleration: 30
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 200
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
