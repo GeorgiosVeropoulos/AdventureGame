@@ -6,8 +6,10 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
 
-    public bool canChase;
-   
+    
+    private float cooldownTime = 1.6f;  // swingtimer
+    private bool isCooldown;
+
     public Transform Player;
     public Transform oldlook;
     public Transform startingPosition;
@@ -15,6 +17,7 @@ public class EnemyController : MonoBehaviour
     Animator EnemyAnim;
     Rigidbody rigidbody;
 
+    public bool canChase;
     public float animspeed = 0; 
     public float minDist = 5;
     public float maxDist = 10;
@@ -56,6 +59,11 @@ public class EnemyController : MonoBehaviour
                 {
                     EnemyAnim.SetFloat("Speed", 0);
                     agent.isStopped = true;
+                    if (!isCooldown)
+                    {
+                        // handles the attack swing
+                        StartCoroutine("SwingTimer");
+                    }
                 }
             }
             
@@ -97,4 +105,16 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
 	}
+
+    private IEnumerator SwingTimer()
+	{
+        isCooldown = true;
+        EnemyAnim.SetBool("Attack", true);
+        EnemyAnim.Play("Attack");
+        yield return new WaitForSeconds(cooldownTime);
+        EnemyAnim.SetBool("Attack", false);
+        isCooldown = false;
+	}
+
+    
 }

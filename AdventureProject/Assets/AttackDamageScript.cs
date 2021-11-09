@@ -21,6 +21,7 @@ public class AttackDamageScript : MonoBehaviour
 		{
             Debug.Log("Will do damage");
             other.GetComponent<enemyhealth>().DoDamage();
+            other.GetComponent<Animator>().Play("Get Hit");
 		}
 	}
 }
