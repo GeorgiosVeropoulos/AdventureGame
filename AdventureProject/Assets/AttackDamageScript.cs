@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackDamageScript : MonoBehaviour
 {
+    public bool CanDoDamage = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,32 @@ public class AttackDamageScript : MonoBehaviour
     }
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Enemy")
+        if(CanDoDamage == true)
 		{
-            Debug.Log("Will do damage");
-            other.GetComponent<enemyhealth>().DoDamage();
-            other.GetComponent<Animator>().Play("Get Hit");
-		}
+            if (other.tag == "Enemy")
+            {
+                if(other.GetComponent<EnemyController>().canChase == true)
+				{
+                    if (other.GetComponent<enemyhealth>().health > 0)
+                    {
+                        Debug.Log("Will do damage");
+                        other.GetComponent<enemyhealth>().DoDamage();
+                        other.GetComponent<Animator>().Play("Get Hit"); // this works check enemy health for next version
+                    }
+                    else
+                    {
+
+                    }
+                }
+				else
+				{
+
+				}
+                
+               
+
+            }
+        }
+		
 	}
 }

@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     
     private float cooldownTime = 1.6f;  // swingtimer
     private bool isCooldown;
+    
 
     public Transform Player;
     public Transform oldlook;
@@ -17,6 +18,7 @@ public class EnemyController : MonoBehaviour
     Animator EnemyAnim;
     Rigidbody rigidbody;
 
+    public bool isDead;
     public bool canChase;
     public float animspeed = 0; 
     public float minDist = 5;
@@ -27,68 +29,77 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         EnemyAnim = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
+        isDead = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         //transform.LookAt(Player);
-        
-        if (Vector3.Distance(transform.position, Player.position) <= maxDist)
-        {
-            //Debug.Log("aggro");
-            
-            agent.isStopped = false;
-            //animspeed = animspeed + 0.001f;
-            //EnemyAnim.SetFloat("Speed", animspeed);
-            if(canChase == true)
-			{
-                if (Vector3.Distance(transform.position, Player.position) >= minDist)
-                {
-                    //transform.LookAt(Player);
-                    //transform.position += transform.forward * speed * Time.deltaTime;
-                    agent.isStopped = false;
-                    EnemyAnim.SetFloat("Speed", 2);
-                    agent.SetDestination(Player.position);
+        if(isDead == false)
+		{
+            if (Vector3.Distance(transform.position, Player.position) <= maxDist)
+            {
+                //Debug.Log("aggro");
 
-                    //Debug.Log("Chasing");
-                    FaceTarget();
+                agent.isStopped = false;
+                //animspeed = animspeed + 0.001f;
+                //EnemyAnim.SetFloat("Speed", animspeed);
+                if (canChase == true)
+                {
+                    if (Vector3.Distance(transform.position, Player.position) >= minDist)
+                    {
+                        //transform.LookAt(Player);
+                        //transform.position += transform.forward * speed * Time.deltaTime;
+                        agent.isStopped = false;
+                        EnemyAnim.SetFloat("Speed", 2);
+                        agent.SetDestination(Player.position);
+
+                        //Debug.Log("Chasing");
+                        FaceTarget();
+
+                    }
+                    else
+                    {
+                        EnemyAnim.SetFloat("Speed", 0);
+                        agent.isStopped = true;
+                        if (!isCooldown)
+                        {
+                            // handles the attack swing
+                            StartCoroutine("SwingTimer");
+                        }
+                    }
+                }
+
+
+            }
+            else
+            {
+                Debug.Log("RESETTING");
+
+                if (Vector3.Distance(transform.position, startingPosition.position) >= 1f)
+                {
+                    canChase = false;
+                    EnemyAnim.SetFloat("Speed", 1.4f);
+                    agent.isStopped = false;
+                    agent.SetDestination(startingPosition.position);
 
                 }
                 else
                 {
-                    EnemyAnim.SetFloat("Speed", 0);
+                    canChase = true;
                     agent.isStopped = true;
-                    if (!isCooldown)
-                    {
-                        // handles the attack swing
-                        StartCoroutine("SwingTimer");
-                    }
+                    EnemyAnim.SetFloat("Speed", 0);
                 }
+                transform.LookAt(oldlook);
             }
-            
-			
         }
-        else
-        {
-            Debug.Log("RESETTING");
-            
-            if (Vector3.Distance(transform.position, startingPosition.position) >= 1f)
-			{
-                canChase = false;
-                EnemyAnim.SetFloat("Speed", 1.4f);
-                agent.isStopped = false;
-                agent.SetDestination(startingPosition.position);
-                
-            }
-			else
-			{
-                canChase = true;
-                agent.isStopped = true;
-                EnemyAnim.SetFloat("Speed", 0);
-			}
-            transform.LookAt(oldlook);
-        }
+		else
+		{
+            EnemyAnim.SetBool("Dead", true);
+            this.GetComponent<CapsuleCollider>().isTrigger = true;
+		}
+        
 
     }
 

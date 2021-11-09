@@ -504,6 +504,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6229498194940338806, guid: d90c349721b4e694fad80a76d87b2578,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.26735157
+      objectReference: {fileID: 0}
     - target: {fileID: 6262691154084524410, guid: d90c349721b4e694fad80a76d87b2578,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1857,13 +1862,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826169303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.8419348, z: 0, w: 0.53957933}
   m_LocalPosition: {x: 0, y: 2, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -114.69, z: 0}
 --- !u!54 &826169308
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1914,6 +1919,7 @@ MonoBehaviour:
   Player: {fileID: 92119008690864319}
   oldlook: {fileID: 1891670432}
   startingPosition: {fileID: 1691447173}
+  isDead: 0
   canChase: 0
   animspeed: 0
   minDist: 2
@@ -1983,6 +1989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  controller: {fileID: 885126308}
 --- !u!1 &890643848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,10 +4200,9 @@ GameObject:
   - component: {fileID: 1891670431}
   - component: {fileID: 1891670430}
   - component: {fileID: 1891670429}
-  - component: {fileID: 1891670433}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -4277,19 +4283,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1891670433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891670428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0e7bcf6469abc47a7a800995e7c369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!1 &1900673120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,8 +4805,8 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 1
-    m_NormalBias: 0
+    m_Bias: 2
+    m_NormalBias: 0.47
     m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
@@ -6768,6 +6761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftJoystick: {fileID: 611396634}
   Touchfield: {fileID: 1370866443}
+  Swordscript: {fileID: 94505560445328299}
   CameraDistance: 5
   pos: {fileID: 61205433}
   isGrounded: 0
@@ -6947,6 +6941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a8d3c7a87d76b48af110122c75c9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDoDamage: 0
 --- !u!1 &94509359685919389
 GameObject:
   m_ObjectHideFlags: 0

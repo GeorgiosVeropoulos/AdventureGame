@@ -10,7 +10,7 @@ public class OwnThirdPersonController : MonoBehaviour
     //public FixedButton Attack;
     public FixedTouchField Touchfield;
     protected Animator anim;
-
+    public AttackDamageScript Swordscript;
     
     protected Rigidbody Rigidbody;
     protected float CameraAngleX;
@@ -96,6 +96,7 @@ public class OwnThirdPersonController : MonoBehaviour
         {
             anim.Play("Attack");
             anim.SetBool("Attack", true);
+            Swordscript.CanDoDamage = true;
             combostep = 1;
             return;
         }
@@ -133,5 +134,6 @@ public class OwnThirdPersonController : MonoBehaviour
         combo = false;
         combostep = 0;
         anim.SetBool("Attack", false);
+        Swordscript.CanDoDamage = false;
     }
 }
