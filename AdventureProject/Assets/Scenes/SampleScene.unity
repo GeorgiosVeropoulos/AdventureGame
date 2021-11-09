@@ -107,15 +107,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.64
+    agentHeight: 1.18
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.21333332
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1025,8 +1025,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.52107406, y: 0.96127766, z: 1.0275971}
-  m_Center: {x: 0.0039094687, y: 0.48063868, z: 0.13513477}
+  m_Size: {x: 0.52107406, y: 0.96127766, z: 0.71750647}
+  m_Center: {x: 0.0039094687, y: 0.48063868, z: -0.019910535}
+--- !u!65 &540037532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540037530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.058703642, y: 0.3329049, z: 0.06649778}
+  m_Center: {x: -0.2, y: 0.16645229, z: 0.6096118}
+--- !u!65 &540037533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540037530}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.058703642, y: 0.3329049, z: 0.06649778}
+  m_Center: {x: 0.2034693, y: 0.16645229, z: 0.6096118}
 --- !u!1 &544293380
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,6 +3757,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 137746646020217952, guid: 82b2c64f4e2d5264bbf0f909cadda2fa,
+        type: 3}
+      propertyPath: m_FadeMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137746646020217952, guid: 82b2c64f4e2d5264bbf0f909cadda2fa,
+        type: 3}
+      propertyPath: m_AnimateCrossFading
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137746646020217952, guid: 82b2c64f4e2d5264bbf0f909cadda2fa,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].fadeTransitionWidth
+      value: 0.401
+      objectReference: {fileID: 0}
+    - target: {fileID: 137746646020217952, guid: 82b2c64f4e2d5264bbf0f909cadda2fa,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].fadeTransitionWidth
+      value: 0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: 137746646020217952, guid: 82b2c64f4e2d5264bbf0f909cadda2fa,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].fadeTransitionWidth
+      value: 0.759
+      objectReference: {fileID: 0}
     - target: {fileID: 1325251224132125718, guid: 82b2c64f4e2d5264bbf0f909cadda2fa,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7614,6 +7665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  controller: {fileID: 0}
 --- !u!1 &94372018270897857
 GameObject:
   m_ObjectHideFlags: 0

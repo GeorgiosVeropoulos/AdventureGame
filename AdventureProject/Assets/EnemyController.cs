@@ -39,6 +39,7 @@ public class EnemyController : MonoBehaviour
         //transform.LookAt(Player);
         if(isDead == false)
 		{
+            
             if (Vector3.Distance(transform.position, Player.position) <= maxDist)
             {
                 //Debug.Log("aggro");
@@ -71,29 +72,19 @@ public class EnemyController : MonoBehaviour
                             StartCoroutine("SwingTimer");
                         }
                     }
-                }
 
+                    if(Vector3.Distance(transform.position, startingPosition.position) >= 20f)
+					{
+                        Reset();
+					}
+                }
+                
 
             }
             else
             {
-                Debug.Log("RESETTING");
-
-                if (Vector3.Distance(transform.position, startingPosition.position) >= 1f)
-                {
-                    canChase = false;
-                    EnemyAnim.SetFloat("Speed", 1.4f);
-                    agent.isStopped = false;
-                    agent.SetDestination(startingPosition.position);
-
-                }
-                else
-                {
-                    canChase = true;
-                    agent.isStopped = true;
-                    EnemyAnim.SetFloat("Speed", 0);
-                }
-                transform.LookAt(oldlook);
+                //Reset
+                Reset();
             }
         }
 		else
@@ -119,7 +110,28 @@ public class EnemyController : MonoBehaviour
 
 	}
 
-    private IEnumerator SwingTimer()
+	public void Reset()
+	{
+        Debug.Log("RESETTING");
+
+        if (Vector3.Distance(transform.position, startingPosition.position) >= 1f)
+        {
+            canChase = false;
+            EnemyAnim.SetFloat("Speed", 1.4f);
+            agent.isStopped = false;
+            agent.SetDestination(startingPosition.position);
+
+        }
+        else
+        {
+            canChase = true;
+            agent.isStopped = true;
+            EnemyAnim.SetFloat("Speed", 0);
+        }
+        transform.LookAt(oldlook);
+    }
+
+	private IEnumerator SwingTimer()
 	{
         isCooldown = true;
         EnemyAnim.SetBool("Attack", true);
