@@ -7,11 +7,16 @@ public class PlayerHealth : MonoBehaviour
     public int health = 5;
 
     public Animator controller;
-    // Start is called before the first frame update
-    void Start()
-    {
-
+	// Start is called before the first frame update
+	private void Awake()
+	{
         controller = this.GetComponent<Animator>();
+        
+	}
+	void Start()
+    {
+        controller.SetBool("Dead", false);
+
     }
 
     // Update is called once per frame
@@ -20,7 +25,8 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player DEATH");
-            //controller.isDead = true;
+            Death();
+            
         }
         else
         {
@@ -39,6 +45,12 @@ public class PlayerHealth : MonoBehaviour
         health -= 1;
         Debug.Log("Player got hit");
         controller.SetBool("Attacked", false);
+
         //anim.Play("Get Hit");
+    }
+    public void Death()
+	{
+        controller.SetBool("Dead", true);
+        controller.Play("Death");
     }
 }

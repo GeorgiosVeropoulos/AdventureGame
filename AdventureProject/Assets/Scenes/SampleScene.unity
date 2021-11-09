@@ -2173,6 +2173,7 @@ MonoBehaviour:
   oldlook: {fileID: 1891670432}
   startingPosition: {fileID: 1691447173}
   AxeDamage: {fileID: 815053960}
+  goingtopoint: 1
   isDead: 0
   canChase: 0
   animspeed: 0
@@ -4353,11 +4354,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1691447173}
   m_Layer: 0
-  m_Name: OldPosition
+  m_Name: StartingPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1691447173
 Transform:
@@ -4367,7 +4368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691447172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.25, y: -0.56, z: 0.25}
+  m_LocalPosition: {x: -0.5, y: -0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891670432}

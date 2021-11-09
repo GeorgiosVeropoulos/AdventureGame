@@ -30,10 +30,7 @@ public class DamagePlayer : MonoBehaviour
                     other.GetComponent<PlayerHealth>().DoDamage();
                     
                 }
-                else
-                {
-
-                }
+                
 
 
 
