@@ -92,6 +92,7 @@ public class OwnThirdPersonController : MonoBehaviour
 
     public void AttackAnim()
     {
+        
         if (combostep == 0)
         {
             anim.Play("Attack");

@@ -26,6 +26,7 @@ public class DamagePlayer : MonoBehaviour
                 if (other.GetComponent<PlayerHealth>().health > 0)
                 {
                     Debug.Log("Will do damage");
+                    other.GetComponent<Animator>().Play("GotHit");
                     other.GetComponent<PlayerHealth>().DoDamage();
                     
                 }

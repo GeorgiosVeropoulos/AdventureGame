@@ -2146,7 +2146,7 @@ MonoBehaviour:
   Player: {fileID: 92119008690864319}
   oldlook: {fileID: 1891670432}
   startingPosition: {fileID: 1691447173}
-  DoDamage: 0
+  AxeDamage: {fileID: 815053960}
   isDead: 0
   canChase: 0
   animspeed: 0
