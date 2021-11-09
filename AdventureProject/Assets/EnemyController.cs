@@ -17,7 +17,8 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     Animator EnemyAnim;
     Rigidbody rigidbody;
-
+    public DamagePlayer AxeDamage;
+    
     public bool isDead;
     public bool canChase;
     public float animspeed = 0; 
@@ -66,6 +67,7 @@ public class EnemyController : MonoBehaviour
                         if (!isCooldown)
                         {
                             // handles the attack swing
+                            
                             StartCoroutine("SwingTimer");
                         }
                     }
@@ -122,7 +124,9 @@ public class EnemyController : MonoBehaviour
         isCooldown = true;
         EnemyAnim.SetBool("Attack", true);
         EnemyAnim.Play("Attack");
+        AxeDamage.CanDamage = true;
         yield return new WaitForSeconds(cooldownTime);
+        AxeDamage.CanDamage = false;
         EnemyAnim.SetBool("Attack", false);
         isCooldown = false;
 	}
