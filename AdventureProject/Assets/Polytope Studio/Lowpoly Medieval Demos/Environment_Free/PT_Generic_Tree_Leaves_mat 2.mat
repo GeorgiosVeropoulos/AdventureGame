@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PT_Generic_Tree_Leaves_mat 2
   m_Shader: {fileID: 4800000, guid: 5f1a71d7bb3221f4885984574896fc3f, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMCOLORSTINTING_ON _CUSTOMWIND_ON _TRANSLUCENCYONOFF_ON
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMCOLORSTINTING_ON _CUSTOMWIND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -64,6 +64,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _CUSTOMCOLORSTINTING: 1
     - _CUSTOMWIND: 1
@@ -85,16 +86,18 @@ Material:
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SnowAmount: 1
-    - _SnowCoverage: 0.45
-    - _SnowGradient: 0.83
+    - _SnowCoverage: 0.355
+    - _SnowGradient: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TRANSLUCENCYONOFF: 1
+    - _TRANSLUCENCYONOFF: 0
     - _TransAmbient: 0.7
     - _TransDirect: 0.58
+    - _TransNormal: 0.5
     - _TransNormalDistortion: 0.486
     - _TransScattering: 25.1
     - _TransShadow: 0.5
+    - _TransStrength: 1
     - _Translucency: 5
     - _UVSec: 0
     - _WINDMASKONOFF: 0
