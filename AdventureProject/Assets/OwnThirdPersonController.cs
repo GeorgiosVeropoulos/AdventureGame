@@ -106,7 +106,7 @@ public class OwnThirdPersonController : MonoBehaviour
             {
                 anim.Play("Attack");
                 anim.SetBool("Attack", true);
-                Swordscript.CanDoDamage = true;
+                //Swordscript.CanDoDamage = true;
                 combostep = 1;
                 return;
             }
@@ -125,6 +125,7 @@ public class OwnThirdPersonController : MonoBehaviour
                 }
 
             }
+            
         }
 		
         
@@ -139,14 +140,23 @@ public class OwnThirdPersonController : MonoBehaviour
         if(combostep == 2)
 		{
 			anim.Play("Attack2");
+           
 
-		}
+        }
 	}
     public void ComboReset()
 	{
         combo = false;
         combostep = 0;
         anim.SetBool("Attack", false);
+        //Swordscript.CanDoDamage = false;
+    }
+    public void CanDamage()
+	{
+        Swordscript.CanDoDamage = true;
+	}
+    public void CantDamage()
+	{
         Swordscript.CanDoDamage = false;
     }
 
