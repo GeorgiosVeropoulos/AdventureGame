@@ -11,6 +11,7 @@ public class OwnThirdPersonController : MonoBehaviour
     public FixedTouchField Touchfield;
     protected Animator anim;
     public AttackDamageScript Swordscript;
+    public bool blockonCD;
     
     protected Rigidbody Rigidbody;
     protected float CameraAngleX;
@@ -160,7 +161,28 @@ public class OwnThirdPersonController : MonoBehaviour
         Swordscript.CanDoDamage = false;
     }
 
-
+    public void Block()
+	{
+        combostep = 0;
+        combo = false;
+        if(blockonCD == false)
+		{
+            anim.Play("Block");
+            anim.SetBool("Blocking", true);
+            Invoke("resetblockbool", 1.3f);
+            Invoke("ResetBlockCD", 4.0f);
+            blockonCD = true;
+        }
+        
+	}
+    void ResetBlockCD()
+    {
+        blockonCD = false;
+    }
+    void resetblockbool()
+	{
+        anim.SetBool("Blocking", false);
+	}
     // Adjust velocity to go down slopes without jumping/falling
     private Vector3 AdjustVelocityToSlope(Vector3 velocity)
 	{

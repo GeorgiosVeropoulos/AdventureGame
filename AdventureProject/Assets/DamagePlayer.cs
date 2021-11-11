@@ -23,13 +23,17 @@ public class DamagePlayer : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                if (other.GetComponent<PlayerHealth>().health > 0)
+                if (other.GetComponent<Animator>().GetBool("Blocking") == false)
                 {
-                    Debug.Log("Will do damage");
-                    other.GetComponent<Animator>().Play("GotHit");
-                    other.GetComponent<PlayerHealth>().DoDamage();
-                    
+                    if (other.GetComponent<PlayerHealth>().health > 0)
+                    {
+                        Debug.Log("Will do damage");
+                        other.GetComponent<Animator>().Play("GotHit");
+                        other.GetComponent<PlayerHealth>().DoDamage();
+
+                    }
                 }
+                
                 
 
 

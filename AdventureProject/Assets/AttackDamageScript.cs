@@ -24,6 +24,7 @@ public class AttackDamageScript : MonoBehaviour
             {
                 if(other.GetComponent<EnemyController>().canChase == true)
 				{
+                    
                     if (other.GetComponent<enemyhealth>().health > 0)
                     {
                         Debug.Log("Will do damage");
