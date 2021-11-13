@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     public bool goingtopoint;
     public bool isDead;
     public bool canChase;
-    public float animspeed = 0; 
+    
     public float minDist = 5;
     public float maxDist = 10;
     
@@ -49,8 +49,7 @@ public class EnemyController : MonoBehaviour
                     //Debug.Log("aggro");
                     maxDist = 200f;
                     agent.isStopped = false;
-                    //animspeed = animspeed + 0.001f;
-                    //EnemyAnim.SetFloat("Speed", animspeed);
+                    
                     if (canChase == true)
                     {
                         if (Vector3.Distance(transform.position, Player.position) >= minDist)
@@ -126,7 +125,7 @@ public class EnemyController : MonoBehaviour
 
 	public void Reset()
 	{
-        Debug.Log("RESETTING");
+        //Debug.Log("RESETTING");
         maxDist = 10f;
         if (Vector3.Distance(transform.position, startingPosition.position) >= 1f)
         {
@@ -152,7 +151,8 @@ public class EnemyController : MonoBehaviour
         isCooldown = true;
         EnemyAnim.SetBool("Attack", true);
         EnemyAnim.Play("Attack");
-        AxeDamage.CanDamage = true;
+        Invoke("enableCanDamage", 0.3f);
+        
         yield return new WaitForSeconds(0.6f);
         // will wait 0.6 seconds after swing start to disable collider 
         // just enough time to hit and not be able to do damage after if we run into the axe
@@ -164,6 +164,10 @@ public class EnemyController : MonoBehaviour
         
 
         
+    }
+    void enableCanDamage()
+	{
+        AxeDamage.CanDamage = true;
     }
 
     

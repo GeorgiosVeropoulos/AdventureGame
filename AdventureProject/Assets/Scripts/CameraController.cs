@@ -21,12 +21,12 @@ public class CameraController : MonoBehaviour
 		{
 			
 			float distance = Vector3.Distance(transform.position, hit.point);
-			Debug.Log("HIT");
+			//Debug.Log("HIT");
 			controller.CameraDistance = distance;
 		}
 		else
 		{
-			Debug.Log(" NO HIT");
+			//Debug.Log(" NO HIT");
 			controller.CameraDistance = maxDistanceToCamera;
 		}
 		Debug.DrawRay(transform.position, direction);

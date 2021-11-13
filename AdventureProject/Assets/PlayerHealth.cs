@@ -35,10 +35,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-	private void FixedUpdate()
-	{
-        
-    }
+	
 
 	public void DoDamage()
     {

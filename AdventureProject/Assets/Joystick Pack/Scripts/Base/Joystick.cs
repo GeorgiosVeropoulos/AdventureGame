@@ -45,7 +45,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     protected virtual void Start()
     {
         mycontroller = FindObjectOfType<OwnThirdPersonController>();
-        Debug.Log(mycontroller);
+        //Debug.Log(mycontroller);
         HandleRange = handleRange;
         DeadZone = deadZone;
         baseRect = GetComponent<RectTransform>();

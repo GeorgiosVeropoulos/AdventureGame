@@ -48,7 +48,7 @@ public class OwnThirdPersonController : MonoBehaviour
             if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, 0.65f))
             {
 
-                Debug.Log("Grounded");
+                //Debug.Log("Grounded");
                 anim.SetBool("isGround", true);
 
                 var Input = new Vector3(LeftJoystick.input.x, 0, LeftJoystick.input.y);
@@ -81,7 +81,7 @@ public class OwnThirdPersonController : MonoBehaviour
             }
             else
             {
-                Debug.Log("AIR");
+               // Debug.Log("AIR");
                 anim.SetBool("isGround", false);
                 //Rigidbody.velocity = new Vector3(5f, Rigidbody.velocity.y, 5f);
                 anim.SetFloat("Speed", 2f);
@@ -202,4 +202,16 @@ public class OwnThirdPersonController : MonoBehaviour
 
         return velocity;
 	}
+    public bool isFront(Transform from, Transform to)
+    {
+        Vector3 directionOfPlayer = from.position - to.position;
+        float angle = Vector3.Angle(transform.forward, directionOfPlayer);
+
+        if (Mathf.Abs(angle) > 90 && Mathf.Abs(angle) < 270)
+        {
+           
+            return true;
+        }
+        return false;
+    }
 }

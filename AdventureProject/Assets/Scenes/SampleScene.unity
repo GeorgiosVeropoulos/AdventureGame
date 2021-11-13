@@ -3337,22 +3337,22 @@ PrefabInstance:
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.809289
+      value: 14.122418
       objectReference: {fileID: 0}
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50411415
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.223662
+      value: -10.419196
       objectReference: {fileID: 0}
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.84862804
+      value: 0.5691377
       objectReference: {fileID: 0}
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
@@ -3362,7 +3362,7 @@ PrefabInstance:
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.52899003
+      value: 0.82224226
       objectReference: {fileID: 0}
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
@@ -3377,7 +3377,7 @@ PrefabInstance:
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 63.874004
+      value: 110.62
       objectReference: {fileID: 0}
     - target: {fileID: 475872118457758263, guid: d9f58151106807d458457ae6c77b6e21,
         type: 3}
@@ -3676,19 +3676,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59719
+      value: 1.6615839
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.94714
+      value: -0.82021976
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.965926
+      value: 0.98850673
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2588186
+      value: 0.15117681
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -3700,7 +3700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 30.000002
+      value: 17.390001
       objectReference: {fileID: 0}
     - target: {fileID: 4535833122221914, guid: a9df22d2126dd8f4488825cbc40a7d8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -7347,8 +7347,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 14.805068, y: 99.63904, z: 69.8073}
-  m_Center: {x: -0.05248701, y: 49.318485, z: 24.355124}
+  m_Size: {x: 38.905506, y: 99.63903, z: 69.8073}
+  m_Center: {x: -12.1027155, y: 49.31819, z: 24.354876}
 --- !u!114 &815053960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7362,6 +7362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanDamage: 0
+  playercontroller: {fileID: 94300431775310480}
 --- !u!4 &815053961
 Transform:
   m_ObjectHideFlags: 0
@@ -7711,7 +7712,6 @@ MonoBehaviour:
   goingtopoint: 1
   isDead: 0
   canChase: 0
-  animspeed: 0
   minDist: 2
   maxDist: 10
 --- !u!136 &885126309
@@ -13531,7 +13531,7 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveSpeed
-      value: 0.26
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13546,7 +13546,7 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveLength
-      value: 2.42
+      value: 3.98
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13566,12 +13566,12 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: normalsScale
-      value: 0.102
+      value: 0.189
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: normalsSpeed
-      value: 0.01
+      value: 0.0149
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13591,27 +13591,27 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveSteepness
-      value: 0.066
+      value: 0.022
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveVisuals.x
-      value: 0.066
+      value: 0.022
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveVisuals.y
-      value: 2.42
+      value: 3.98
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveVisuals.z
-      value: 0.26
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: horizonColor.g
-      value: 0.22722402
+      value: 0.22707114
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13626,12 +13626,17 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: shallowColor.r
-      value: 0.15565622
+      value: 0.15551129
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
+      propertyPath: waveDirection1
+      value: 0.312
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: waveDirection2
-      value: 0.463
+      value: 0.482
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13650,8 +13655,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
+      propertyPath: surfaceFoamBlend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
+      propertyPath: waveDirections.x
+      value: 0.312
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
       propertyPath: waveDirections.y
-      value: 0.463
+      value: 0.482
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13661,22 +13676,22 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: normalsMovement.x
-      value: 0.01
+      value: 0.0149
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: normalsMovement.y
-      value: 0.102
+      value: 0.189
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamCutoff
-      value: 22
+      value: 0.389
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamScale1
-      value: 0.193
+      value: 0.423
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13686,7 +13701,7 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamSpeed1
-      value: 0.055
+      value: 0.031
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13712,16 +13727,36 @@ PrefabInstance:
         type: 3}
       propertyPath: surfaceFoamTexture
       value: 
-      objectReference: {fileID: 2800000, guid: 0a33360c1c6b85c45bb8a19af0c4e87a, type: 3}
+      objectReference: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
+      propertyPath: surfaceFoamColor1.a
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
+      propertyPath: surfaceFoamColor1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
+      propertyPath: surfaceFoamColor1.g
+      value: 0.8062167
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
+        type: 3}
+      propertyPath: surfaceFoamColor1.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: intersectionFoamDepth
-      value: 0.457
+      value: 0.494
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamDirection1
-      value: 0.399
+      value: 0.159
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13731,7 +13766,7 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamDistortion
-      value: 220
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13741,12 +13776,12 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamMovement.x
-      value: 0.399
+      value: 0.159
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamMovement.y
-      value: 0.055
+      value: 0.031
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13756,12 +13791,12 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamSampling.x
-      value: 22
+      value: 0.389
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamSampling.y
-      value: 220
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
@@ -13786,7 +13821,7 @@ PrefabInstance:
     - target: {fileID: 3571767707691462230, guid: b1b6a4a4712a0364bbffc21e45491ba2,
         type: 3}
       propertyPath: surfaceFoamTilingAndOffset.z
-      value: 0.193
+      value: 0.423
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1b6a4a4712a0364bbffc21e45491ba2, type: 3}
@@ -17804,7 +17839,7 @@ GameObject:
   - component: {fileID: 94300431775310481}
   - component: {fileID: 94300431775310482}
   m_Layer: 0
-  m_Name: RPGHeroPolyart (1)
+  m_Name: PLAYER
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17883,7 +17918,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94300431775310477}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.245, y: 0.19, z: 0.26}
