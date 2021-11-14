@@ -45,7 +45,7 @@ public class OwnThirdPersonController : MonoBehaviour
             Camera.main.transform.position = transform.position + Quaternion.AngleAxis(CameraAngleX, Vector3.up) * new Vector3(0, 3, CameraDistance);
             Camera.main.transform.rotation = Quaternion.LookRotation(transform.position + Vector3.up * 2f - Camera.main.transform.position, Vector3.up);
             //anim.SetBool("Attack", false);
-            if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, 0.65f))
+            if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, 0.75f))
             {
 
                 //Debug.Log("Grounded");
