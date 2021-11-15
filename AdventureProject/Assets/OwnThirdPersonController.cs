@@ -19,7 +19,8 @@ public class OwnThirdPersonController : MonoBehaviour
     public float  CameraDistance;
     protected float CameraPosSpeed = 0.1f;
     public GameObject pos;
-    public bool isGrounded;
+
+    public bool canjump = false;
     public bool combo;
     public int combostep;
     public bool stopmove = true;
@@ -31,7 +32,7 @@ public class OwnThirdPersonController : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         //anim.SetBool("Attack", false);
-        isGrounded = true;
+        
         
 
     }
@@ -39,43 +40,38 @@ public class OwnThirdPersonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(anim.GetBool("Dead") == false)
 		{
             CameraAngleX += Touchfield.TouchDist.x * CameraAngleSpeed;
             Camera.main.transform.position = transform.position + Quaternion.AngleAxis(CameraAngleX, Vector3.up) * new Vector3(0, 3, CameraDistance);
             Camera.main.transform.rotation = Quaternion.LookRotation(transform.position + Vector3.up * 2f - Camera.main.transform.position, Vector3.up);
             //anim.SetBool("Attack", false);
-            if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, 0.75f))
+            RaycastHit hit;
+            //Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, 0.75f)
+            if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0),Vector3.down, out hit, 0.75f))
             {
 
-                //Debug.Log("Grounded");
+                Debug.DrawRay(transform.position - new Vector3(0, -0.5f, 0), Vector3.down * hit.distance, Color.green);
                 anim.SetBool("isGround", true);
 
                 var Input = new Vector3(LeftJoystick.input.x, 0, LeftJoystick.input.y);
                 var vel = Quaternion.AngleAxis(CameraAngleX + 180, Vector3.up) * Input * 4f;
-                
 
                 if (stopmove == false)
                 {
                     Rigidbody.velocity = new Vector3(vel.x, AdjustVelocityToSlope(Rigidbody.velocity).y, vel.z);
-                    
+
                     transform.rotation = Quaternion.AngleAxis(CameraAngleX + 180 + Vector3.SignedAngle(Vector3.forward,
                         Input.normalized + Vector3.forward * 0.001f, Vector3.up), Vector3.up);
                     anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
                 }
                 else
                 {
-                    Rigidbody.velocity = new Vector3(0, 0, 0);
+                    Rigidbody.velocity = new Vector3(0, AdjustVelocityToSlope(Rigidbody.velocity).y, 0);
                     anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
 
                 }
-
-
-
-                //if (Attack.Pressed == true)
-                //{
-                //    anim.SetBool("Attack", true);
-                //}
 
 
             }
@@ -83,19 +79,16 @@ public class OwnThirdPersonController : MonoBehaviour
             {
                // Debug.Log("AIR");
                 anim.SetBool("isGround", false);
-                //Rigidbody.velocity = new Vector3(5f, Rigidbody.velocity.y, 5f);
+                var Input = new Vector3(LeftJoystick.input.x, 0, LeftJoystick.input.y);
+                transform.rotation = Quaternion.AngleAxis(CameraAngleX + 180 + Vector3.SignedAngle(Vector3.forward,
+                       Input.normalized + Vector3.forward * 0.001f, Vector3.up), Vector3.up); 
                 anim.SetFloat("Speed", 2f);
             }
-
         }
 		else
 		{
 
 		}
-
-
-
-
 
     }
 
@@ -214,4 +207,16 @@ public class OwnThirdPersonController : MonoBehaviour
         }
         return false;
     }
+
+    public void Jump()
+	{
+        if (anim.GetBool("isGround") == true)
+        {
+			this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z);
+			Rigidbody.AddForce(0, 7f, 0, ForceMode.Impulse);
+            //Invoke("Waitforjump", 1f);
+            ///anim.SetBool("isGround", false);
+        }
+    }
+    
 }
