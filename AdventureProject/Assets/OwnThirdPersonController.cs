@@ -117,6 +117,10 @@ public class OwnThirdPersonController : MonoBehaviour
                     combo = false;
                     combostep += 1;
                 }
+                //if (combostep == 2 && combo == false)
+                //{
+                //    combostep = 0;
+                //}
 
             }
             
@@ -134,7 +138,7 @@ public class OwnThirdPersonController : MonoBehaviour
         if(combostep == 2)
 		{
 			anim.Play("Attack2");
-           
+            combostep = 0;
 
         }
 	}
