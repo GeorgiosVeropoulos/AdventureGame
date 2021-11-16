@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 			//Debug.Log(" NO HIT");
 			controller.CameraDistance = maxDistanceToCamera;
 		}
-		Debug.DrawRay(transform.position, direction);
+		
 	}
 
 }
