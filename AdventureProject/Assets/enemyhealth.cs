@@ -19,7 +19,7 @@ public class enemyhealth : MonoBehaviour
 	{
         if(health <= 0)
 		{
-            Debug.Log("ENEMY DEATH");
+            
             controller.isDead = true;
 		}
 		else

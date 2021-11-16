@@ -25,17 +25,34 @@ public class OwnThirdPersonController : MonoBehaviour
     public int combostep;
     public bool stopmove = true;
 
-	private void Start()
+    private int Dead;
+    private int isGround;
+    private int Speed;
+    private int Attack;
+    private int Attackbool;
+    private int Attack2;
+    private int block;
+    private int blocking;
+   
+    
+    private void Awake()
 	{
-        
-	}
+        Dead = Animator.StringToHash("Dead");
+        isGround = Animator.StringToHash("isGround");
+        Speed = Animator.StringToHash("Speed");
+        Attack = Animator.StringToHash("Attack");
+        Attackbool = Animator.StringToHash("Attack");
+        Attack2 = Animator.StringToHash("Attack2");
+        block = Animator.StringToHash("Block");
+        blocking = Animator.StringToHash("Blocking");
+    }
 
 
 	// Update is called once per frame
 	void Update()
     {
         
-        if(anim.GetBool("Dead") == false)
+        if(anim.GetBool(Dead) == false)
 		{
             CameraAngleX += Touchfield.TouchDist.x * CameraAngleSpeed;
             Camera.main.transform.position = transform.position + Quaternion.AngleAxis(CameraAngleX, Vector3.up) * new Vector3(0, 3, CameraDistance);
@@ -46,8 +63,8 @@ public class OwnThirdPersonController : MonoBehaviour
             if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0),Vector3.down, 0.75f))
             {
 
-                Debug.DrawRay(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, Color.green);
-                anim.SetBool("isGround", true);
+               
+                anim.SetBool(isGround, true);
 
                 var Input = new Vector3(LeftJoystick.input.x, 0, LeftJoystick.input.y);
                 var vel = Quaternion.AngleAxis(CameraAngleX + 180, Vector3.up) * Input * 4f;
@@ -58,12 +75,12 @@ public class OwnThirdPersonController : MonoBehaviour
 
                     transform.rotation = Quaternion.AngleAxis(CameraAngleX + 180 + Vector3.SignedAngle(Vector3.forward,
                         Input.normalized + Vector3.forward * 0.001f, Vector3.up), Vector3.up);
-                    anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
+                    anim.SetFloat(Speed, Rigidbody.velocity.magnitude);
                 }
                 else
                 {
                     Rigidbody.velocity = new Vector3(0, AdjustVelocityToSlope(Rigidbody.velocity).y, 0);
-                    anim.SetFloat("Speed", Rigidbody.velocity.magnitude);
+                    anim.SetFloat(Speed, Rigidbody.velocity.magnitude);
 
                 }
 
@@ -71,12 +88,12 @@ public class OwnThirdPersonController : MonoBehaviour
             }
             else
             {
-               // Debug.Log("AIR");
-                anim.SetBool("isGround", false);
+               
+                anim.SetBool(isGround, false);
                 var Input = new Vector3(LeftJoystick.input.x, 0, LeftJoystick.input.y);
                 transform.rotation = Quaternion.AngleAxis(CameraAngleX + 180 + Vector3.SignedAngle(Vector3.forward,
                        Input.normalized + Vector3.forward * 0.001f, Vector3.up), Vector3.up); 
-                anim.SetFloat("Speed", 2f);
+                anim.SetFloat(Speed, 2f);
             }
         }
 		else
@@ -88,12 +105,12 @@ public class OwnThirdPersonController : MonoBehaviour
 
     public void AttackAnim()
     {
-        if(anim.GetBool("Dead") == false)
+        if(anim.GetBool(Dead) == false)
 		{
             if (combostep == 0)
             {
-                anim.Play("Attack");
-                anim.SetBool("Attack", true);
+                anim.Play(Attack);
+                anim.SetBool(Attackbool, true);
                 //Swordscript.CanDoDamage = true;
                 combostep = 1;
                 return;
@@ -111,10 +128,7 @@ public class OwnThirdPersonController : MonoBehaviour
                     combo = false;
                     combostep += 1;
                 }
-                //if (combostep == 2 && combo == false)
-                //{
-                //    combostep = 0;
-                //}
+               
 
             }
             
@@ -131,7 +145,7 @@ public class OwnThirdPersonController : MonoBehaviour
 	{
         if(combostep == 2)
 		{
-			anim.Play("Attack2");
+			anim.Play(Attack2);
             combostep = 0;
 
         }
@@ -140,7 +154,7 @@ public class OwnThirdPersonController : MonoBehaviour
 	{
         combo = false;
         combostep = 0;
-        anim.SetBool("Attack", false);
+        anim.SetBool(Attack, false);
         //Swordscript.CanDoDamage = false;
     }
     public void CanDamage()
@@ -158,8 +172,8 @@ public class OwnThirdPersonController : MonoBehaviour
         combo = false;
         if(blockonCD == false)
 		{
-            anim.Play("Block");
-            anim.SetBool("Blocking", true);
+            anim.Play(block);
+            anim.SetBool(blocking, true);
             Invoke("resetblockbool", 1.3f);
             Invoke("ResetBlockCD", 4.0f);
             blockonCD = true;
@@ -172,7 +186,7 @@ public class OwnThirdPersonController : MonoBehaviour
     }
     void resetblockbool()
 	{
-        anim.SetBool("Blocking", false);
+        anim.SetBool(blocking, false);
 	}
     // Adjust velocity to go down slopes without jumping/falling
     private Vector3 AdjustVelocityToSlope(Vector3 velocity)
@@ -208,7 +222,7 @@ public class OwnThirdPersonController : MonoBehaviour
 
     public void Jump()
 	{
-        if (anim.GetBool("isGround") == true)
+        if (anim.GetBool(isGround) == true)
         {
 			this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.2f, this.transform.position.z);
 			Rigidbody.AddForce(0, 7f, 0, ForceMode.Impulse);

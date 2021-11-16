@@ -7,17 +7,17 @@ public class DamagePlayer : MonoBehaviour
 
     public bool CanDamage;
     public OwnThirdPersonController playercontroller;
+    public PlayerHealth playerhealth;
+    public Animator PlayerAnim;
+    
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        
         //playercontroller = GetComponent<OwnThirdPersonController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
         //Vector3 target = (player.position - thisorc.position).normalized;
@@ -30,12 +30,13 @@ public class DamagePlayer : MonoBehaviour
                 if(playercontroller.isFront(this.transform.parent,other.transform) == true)
                 {
 
-                    Debug.Log("Player isnt looking at enemy");
-                    if (other.GetComponent<PlayerHealth>().health > 0)
+                    //Debug.Log("Player isnt looking at enemy");
+                    if (playerhealth.health > 0)
                     {
-                        Debug.Log("Will do damage");
-                        other.GetComponent<Animator>().Play("GotHit");
-                        other.GetComponent<PlayerHealth>().DoDamage();
+
+                       
+                        PlayerAnim.Play("GotHit");
+                        playerhealth.DoDamage();
 
                     }
 
@@ -43,23 +44,23 @@ public class DamagePlayer : MonoBehaviour
 				else
 				{
                     
-                    Debug.Log("Player is looking at enemy");
+                    //Debug.Log("Player is looking at enemy");
 
 
-                    if (other.GetComponent<Animator>().GetBool("Blocking") == false)
+                    if (PlayerAnim.GetBool("Blocking") == false)
                     {
 
-                        if (other.GetComponent<PlayerHealth>().health > 0)
+                        if (playerhealth.health > 0)
                         {
                             //Debug.Log("Will do damage");
-                            other.GetComponent<Animator>().Play("GotHit");
-                            other.GetComponent<PlayerHealth>().DoDamage();
+                            PlayerAnim.Play("GotHit");
+                            playerhealth.DoDamage();
 
                         }
                     }
 					else
 					{
-                        other.GetComponent<Animator>().Play("GotHit");
+                        PlayerAnim.Play("GotHit");
                     }
                 }
                 

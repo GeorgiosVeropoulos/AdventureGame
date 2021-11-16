@@ -27,8 +27,9 @@ public class AttackDamageScript : MonoBehaviour
                     
                     if (other.GetComponent<enemyhealth>().health > 0)
                     {
-                        Debug.Log("Will do damage");
+                        
                         other.GetComponent<enemyhealth>().DoDamage();
+                        
                         other.GetComponent<Animator>().Play("Get Hit"); // this works check enemy health for next version
                     }
                     else

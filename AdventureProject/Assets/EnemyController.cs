@@ -25,7 +25,21 @@ public class EnemyController : MonoBehaviour
     
     public float minDist = 5;
     public float maxDist = 10;
-    
+    private int Speed;
+    private int swingtimer;
+    private int attack;
+    private int attackbool;
+
+	private void Awake()
+	{
+        Speed = Animator.StringToHash("Speed");
+        swingtimer = Animator.StringToHash("SwingTimer");
+        attack = Animator.StringToHash("Attack");
+        attackbool = Animator.StringToHash("attack");
+        swingtimer = Animator.StringToHash("SwingTimer");
+
+
+    }
 
     void Start()
     {
@@ -57,7 +71,7 @@ public class EnemyController : MonoBehaviour
                             //transform.LookAt(Player);
                             //transform.position += transform.forward * speed * Time.deltaTime;
                             agent.isStopped = false;
-                            EnemyAnim.SetFloat("Speed", 2);
+                            EnemyAnim.SetFloat(Speed, 2);
                             agent.SetDestination(Player.position);
 
                             //Debug.Log("Chasing");
@@ -66,7 +80,7 @@ public class EnemyController : MonoBehaviour
                         }
                         else
                         {
-                            EnemyAnim.SetFloat("Speed", 0);
+                            EnemyAnim.SetFloat(Speed, 0);
                             agent.isStopped = true;
 
                             if (!isCooldown)
@@ -107,13 +121,13 @@ public class EnemyController : MonoBehaviour
 
     }
 
-	private void OnDrawGizmos()
-	{
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, maxDist);
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(startingPosition.position, 30f);
-	}
+	//private void OnDrawGizmos()
+	//{
+ //       Gizmos.color = Color.blue;
+ //       Gizmos.DrawWireSphere(transform.position, maxDist);
+	//	Gizmos.color = Color.red;
+	//	Gizmos.DrawWireSphere(startingPosition.position, 30f);
+	//}
 
     void FaceTarget(Transform target)
 	{
@@ -131,7 +145,7 @@ public class EnemyController : MonoBehaviour
         {
             canChase = false;
             goingtopoint = true;
-            EnemyAnim.SetFloat("Speed", 1.4f);
+            EnemyAnim.SetFloat(Speed, 1.4f);
             agent.isStopped = false;
             agent.SetDestination(startingPosition.position);
 
@@ -141,7 +155,7 @@ public class EnemyController : MonoBehaviour
             goingtopoint = false;
             canChase = true;
             agent.isStopped = true;
-            EnemyAnim.SetFloat("Speed", 0);
+            EnemyAnim.SetFloat(Speed, 0);
         }
         FaceTarget(startingPosition);
     }
@@ -149,8 +163,8 @@ public class EnemyController : MonoBehaviour
 	private IEnumerator SwingTimer()
 	{
         isCooldown = true;
-        EnemyAnim.SetBool("Attack", true);
-        EnemyAnim.Play("Attack");
+        EnemyAnim.SetBool(attackbool, true);
+        EnemyAnim.Play(attack);
         Invoke("enableCanDamage", 0.3f);
         
         yield return new WaitForSeconds(0.6f);
@@ -159,7 +173,7 @@ public class EnemyController : MonoBehaviour
         AxeDamage.CanDamage = false;
         yield return new WaitForSeconds(cooldownTime);
         
-        EnemyAnim.SetBool("Attack", false);
+        EnemyAnim.SetBool(attackbool, false);
         isCooldown = false;
         
 
