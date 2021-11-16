@@ -9,11 +9,11 @@ public class OwnThirdPersonController : MonoBehaviour
     public FixedJoystick LeftJoystick;
     //public FixedButton Attack;
     public FixedTouchField Touchfield;
-    protected Animator anim;
+    public  Animator anim;
     public AttackDamageScript Swordscript;
     public bool blockonCD;
     
-    protected Rigidbody Rigidbody;
+    public Rigidbody Rigidbody;
     protected float CameraAngleX;
     protected float CameraAngleSpeed = 0.1f;
     public float  CameraDistance;
@@ -24,21 +24,15 @@ public class OwnThirdPersonController : MonoBehaviour
     public bool combo;
     public int combostep;
     public bool stopmove = true;
-    //public CameraController camcontrol;
- 
 
-    void Start()
-    {
-        Rigidbody = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
-        //anim.SetBool("Attack", false);
+	private void Start()
+	{
         
-        
+	}
 
-    }
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
         
         if(anim.GetBool("Dead") == false)
@@ -47,12 +41,12 @@ public class OwnThirdPersonController : MonoBehaviour
             Camera.main.transform.position = transform.position + Quaternion.AngleAxis(CameraAngleX, Vector3.up) * new Vector3(0, 3, CameraDistance);
             Camera.main.transform.rotation = Quaternion.LookRotation(transform.position + Vector3.up * 2f - Camera.main.transform.position, Vector3.up);
             //anim.SetBool("Attack", false);
-            RaycastHit hit;
+            
             //Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, 0.75f)
-            if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0),Vector3.down, out hit, 0.75f))
+            if (Physics.Raycast(transform.position - new Vector3(0, -0.5f, 0),Vector3.down, 0.75f))
             {
 
-                Debug.DrawRay(transform.position - new Vector3(0, -0.5f, 0), Vector3.down * hit.distance, Color.green);
+                Debug.DrawRay(transform.position - new Vector3(0, -0.5f, 0), Vector3.down, Color.green);
                 anim.SetBool("isGround", true);
 
                 var Input = new Vector3(LeftJoystick.input.x, 0, LeftJoystick.input.y);

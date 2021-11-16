@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
 	// Start is called before the first frame update
 	private void Awake()
 	{
-        controller = this.GetComponent<Animator>();
+        
         
 	}
 	void Start()
