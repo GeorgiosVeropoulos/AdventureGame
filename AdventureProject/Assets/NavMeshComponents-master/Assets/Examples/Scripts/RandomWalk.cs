@@ -5,19 +5,25 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class RandomWalk : MonoBehaviour
 {
-    public float m_Range = 25.0f;
-    NavMeshAgent m_Agent;
+    public float m_Range = 50.0f;
+    public NavMeshAgent m_Agent;
+    public Animator anim;
 
     void Start()
     {
-        m_Agent = GetComponent<NavMeshAgent>();
+        
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (m_Agent.pathPending || m_Agent.remainingDistance > 0.1f)
+		{
+           
+            anim.SetFloat("Forward", m_Agent.speed / 3);
             return;
+        }
 
+        
         m_Agent.destination = m_Range * Random.insideUnitCircle;
     }
 }
