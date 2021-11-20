@@ -11,7 +11,8 @@ public class QuestGiver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        quest.InitializeQuest();    
+        quest.InitializeQuest();
+        Debug.Log("QUEST KILL ORC STARTED");
     }
 
 	//private void OnTriggerEnter(Collider other)

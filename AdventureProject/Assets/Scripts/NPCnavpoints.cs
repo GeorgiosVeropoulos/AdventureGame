@@ -24,10 +24,10 @@ public class NPCnavpoints : MonoBehaviour
         // between points (ie, the agent doesn't slow down as it
         // approaches a destination point).
         //agent.autoBraking = true;
-        anim.SetFloat(speed, agent.speed/3);
+        anim.SetFloat(speed, agent.speed/4f);
         GotoNextPoint();
         //agent.autoBraking = true;
-       
+        InvokeRepeating("GotoNextPoint", 0f, 40f);
 
     }
 
@@ -51,8 +51,16 @@ public class NPCnavpoints : MonoBehaviour
 	{
 		// Choose the next destination point when the agent gets
 		// close to the current one.
-		if (!agent.pathPending && agent.remainingDistance < 2f)
-			GotoNextPoint();
+		//if (!agent.pathPending && agent.remainingDistance < 2f)
+		//	GotoNextPoint();
+        if(!agent.pathPending && agent.remainingDistance < 2f)
+		{
+            anim.SetFloat(speed, 0);
+        }
+		else
+		{
+            anim.SetFloat(speed, agent.speed / 4f);
+        }
 
 	}
 }
