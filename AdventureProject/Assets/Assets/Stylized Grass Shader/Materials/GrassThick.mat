@@ -22,7 +22,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassThick
   m_Shader: {fileID: 4800000, guid: d7dd1c3f4cba1d441a7d295a168bac0d, type: 3}
-  m_ShaderKeywords: _ADVANCED_LIGHTING _ENVIRONMENTREFLECTIONS_OFF
+  m_ShaderKeywords: _ADVANCED_LIGHTING _ENVIRONMENTREFLECTIONS_OFF _RECEIVESHADOWS_OFF
+    _RECEIVE_SHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -94,7 +95,7 @@ Material:
     - _OcclusionStrength: 0.422
     - _PerspectiveCorrection: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _Scalemap: 0
     - _ShadowBiasCorrection: 0
     - _Smoothness: 0
@@ -122,9 +123,10 @@ Material:
     - _BendTint: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FadeParams: {r: 50, g: 100, b: 0, a: 0}
+    - _FadeParams: {r: 50, g: 100, b: 1, a: 0}
     - _HueVariation: {r: 1, g: 0.63, b: 0, a: 0.15}
     - _NormalParams: {r: 0, g: 0, b: 0, a: 0}
     - _ScalemapInfluence: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

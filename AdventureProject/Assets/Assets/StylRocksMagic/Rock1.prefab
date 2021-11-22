@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 8188555421537761540}
   - component: {fileID: 8188555421537761539}
   - component: {fileID: 8188555421537761538}
-  - component: {fileID: 8188555421537761541}
   m_Layer: 0
   m_Name: StylRocksMagic_3_LOD1(Clone)
   m_TagString: Untagged
@@ -178,20 +177,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8188555421537761541
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8188555421537761543}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8752150391303318646, guid: 27b55ee0396242b44aa3724b40d8b698, type: 3}
 --- !u!1 &8188555421772655987
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,15 +225,15 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.21916218
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8188555420391896868}
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.07754274
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8188555421537761538}
-  - screenRelativeHeight: 0.0575825
+  - screenRelativeHeight: 0.01804517
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8188555421883793974}
@@ -264,7 +249,6 @@ GameObject:
   - component: {fileID: 8188555421883793960}
   - component: {fileID: 8188555421883793975}
   - component: {fileID: 8188555421883793974}
-  - component: {fileID: 8188555421883793961}
   m_Layer: 0
   m_Name: StylRocksMagic_3_LOD2(Clone)
   m_TagString: Untagged
@@ -335,17 +319,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8188555421883793961
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8188555421883793963}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7545878091397458153, guid: c2f79e21e006fba4c8c77c508b688343, type: 3}

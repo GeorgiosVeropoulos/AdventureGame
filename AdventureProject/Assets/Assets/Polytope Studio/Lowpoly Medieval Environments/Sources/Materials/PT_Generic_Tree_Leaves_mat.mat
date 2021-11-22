@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PT_Generic_Tree_Leaves_mat
   m_Shader: {fileID: 4800000, guid: 5f1a71d7bb3221f4885984574896fc3f, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMWIND_ON _TRANSLUCENCYONOFF_ON
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMCOLORSTINTING_ON _CUSTOMWIND_ON _TRANSLUCENCYONOFF_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -64,8 +64,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _BumpScale: 1
-    - _CUSTOMCOLORSTINTING: 0
+    - _CUSTOMCOLORSTINTING: 1
     - _CUSTOMWIND: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -73,8 +74,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Gradient: 0.167
-    - _GradientPower: 2.54
+    - _Gradient: 0.065
+    - _GradientPower: 9.95
     - _LeavesThickness: 0.445
     - _MaskClipValue: 0.5
     - _Metallic: 0
@@ -92,9 +93,11 @@ Material:
     - _TRANSLUCENCYONOFF: 1
     - _TransAmbient: 0.7
     - _TransDirect: 0.58
+    - _TransNormal: 0.5
     - _TransNormalDistortion: 0.486
     - _TransScattering: 25.1
     - _TransShadow: 0.5
+    - _TransStrength: 1
     - _Translucency: 5
     - _UVSec: 0
     - _WINDMASKONOFF: 0
@@ -106,5 +109,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 1, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 1, g: 0.6415998, b: 0, a: 1}
+    - _GroundColor: {r: 0.17218728, g: 0.41509432, b: 0, a: 1}
+    - _TopColor: {r: 0, g: 1, b: 0.02352953, a: 1}
+  m_BuildTextureStacks: []

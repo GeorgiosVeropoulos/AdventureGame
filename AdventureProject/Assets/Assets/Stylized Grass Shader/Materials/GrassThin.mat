@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassThin
   m_Shader: {fileID: 4800000, guid: d7dd1c3f4cba1d441a7d295a168bac0d, type: 3}
-  m_ShaderKeywords: _ADVANCED_LIGHTING _ALPHATOCOVERAGE_ON _ENVIRONMENTREFLECTIONS_OFF
+  m_ShaderKeywords: _ADVANCED_LIGHTING _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -33,7 +33,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 92fb759ae491e0b4c9a24fb1347ad9d4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4ff20847a3416854f8ef5b193af94e49, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -71,7 +71,7 @@ Material:
     m_Floats:
     - _AdvancedLighting: 1
     - _AlphaClip: 0
-    - _AlphaToCoverage: 1
+    - _AlphaToCoverage: 0
     - _AngleFading: 0
     - _BendFlattenStrength: 1
     - _BendMode: 0
@@ -111,7 +111,7 @@ Material:
     - _WindGustTint: 0.025
     - _WindObjectRand: 1
     - _WindRandStrength: 1
-    - _WindSpeed: 3.2
+    - _WindSpeed: 0.73
     - _WindStrength: 0.492
     - _WindSwinging: 0.15
     - _WindVertexRand: 0
@@ -128,3 +128,4 @@ Material:
     - _ScalemapInfluence: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _WindDirection: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

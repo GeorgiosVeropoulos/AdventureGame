@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: PT_Fruit_Tree_Foliage_Mat
   m_Shader: {fileID: 4800000, guid: 5f1a71d7bb3221f4885984574896fc3f, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMWIND_ON
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMCOLORSTINTING_ON _CUSTOMWIND_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -66,7 +66,7 @@ Material:
     m_Floats:
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
-    - _CUSTOMCOLORSTINTING: 0
+    - _CUSTOMCOLORSTINTING: 1
     - _CUSTOMWIND: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -109,5 +109,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 1, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0.5754717, g: 0.5186884, b: 0.04071733, a: 1}
+    - _GroundColor: {r: 0.096389465, g: 0.5283019, b: 0, a: 1}
+    - _TopColor: {r: 0.2580906, g: 0.7075472, b: 0.07676221, a: 1}
+  m_BuildTextureStacks: []
