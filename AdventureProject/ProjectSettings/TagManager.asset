@@ -4,6 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - model
+  - ShotCamera
+  - LOD1
+  - LOD2
+  - LOD3
+  - LOD4
+  - LOD5
+  - LOD6
   - floor
   - Enemy
   layers:
@@ -38,7 +46,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - VolumetricLayer
   m_SortingLayers:
   - name: Default
     uniqueID: 0
