@@ -10,8 +10,11 @@ public class NPCnavpoints : MonoBehaviour
     public NavMeshAgent agent;
     public Animator anim;
     private int speed;
+    public bool isClose;
+    public GameObject player;
 
-	private void Awake()
+
+    private void Awake()
 	{
         speed = Animator.StringToHash("Forward");
     }
@@ -25,9 +28,9 @@ public class NPCnavpoints : MonoBehaviour
         // approaches a destination point).
         //agent.autoBraking = true;
         anim.SetFloat(speed, agent.speed/4f);
-        GotoNextPoint();
+        
         //agent.autoBraking = true;
-        InvokeRepeating("GotoNextPoint", 0f, 40f);
+        
 
     }
 
@@ -39,28 +42,18 @@ public class NPCnavpoints : MonoBehaviour
             return;
 
         // Set the agent to go to the currently selected destination.
-        agent.destination = points[Random.Range(0,points.Length)].position;
-        
+        agent.destination = points[Random.Range(0, points.Length)].position;
+
+
         // Choose the next point in the array as the destination,
         // cycling to the start if necessary.
         //destPoint = (destPoint + 1) % points.Length;
     }
 
    
-	void FixedUpdate()
-	{
-		// Choose the next destination point when the agent gets
-		// close to the current one.
-		//if (!agent.pathPending && agent.remainingDistance < 2f)
-		//	GotoNextPoint();
-        if(!agent.pathPending && agent.remainingDistance < 2f)
-		{
-            anim.SetFloat(speed, 0);
-        }
-		else
-		{
-            anim.SetFloat(speed, agent.speed / 4f);
-        }
+	
+	
 
-	}
+    
+
 }
