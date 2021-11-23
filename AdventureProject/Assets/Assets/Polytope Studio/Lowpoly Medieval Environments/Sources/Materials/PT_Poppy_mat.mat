@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PT_Poppy_mat
-  m_Shader: {fileID: 4800000, guid: 0c5051f579cf1fe41afa0c741da6258e, type: 3}
+  m_Shader: {fileID: 4800000, guid: 69e2e8c890f00e04e945ccd10e764372, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CUSTOMWIND_ON _TRANSLUCENCYONOFF_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -74,8 +74,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Gradient: 0.914
-    - _GradientPower1: 0.66
+    - _Gradient: 1
+    - _GradientPower1: 1
     - _LeavesThickness: 0.5
     - _MaskClipValue: 0.5
     - _Metallic: 0
@@ -101,6 +101,6 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FLOWERSCOLOR: {r: 4, g: 0, b: 0, a: 0}
-    - _GroundColor: {r: 0.12978768, g: 0.49056602, b: 0.09487361, a: 1}
+    - _FLOWERSCOLOR: {r: 1, g: 0, b: 0, a: 0}
+    - _GroundColor: {r: 0.1879673, g: 0.3113208, b: 0.1776878, a: 1}
     - _TopColor: {r: 0.3505436, g: 0.5754717, b: 0.3338822, a: 1}
