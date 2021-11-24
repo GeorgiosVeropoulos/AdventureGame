@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 812953970958151346}
   - component: {fileID: 8808552622963051144}
   - component: {fileID: 3357017270752446854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &812953970958151346
 Transform:
@@ -91,12 +91,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1381582542728439782}
   - component: {fileID: 1488131254464856072}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MyWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1381582542728439782
 Transform:
@@ -132,18 +132,15 @@ LODGroup:
   - screenRelativeHeight: 0.13473406
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3382636234245299052, guid: 3ad7a1cffb2556547a8b7e60fd320431,
-        type: 3}
+    - renderer: {fileID: 8958722854893057270}
   - screenRelativeHeight: 0.069411084
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 6898525708782223234, guid: 3ad7a1cffb2556547a8b7e60fd320431,
-        type: 3}
+    - renderer: {fileID: 945249967021330456}
   - screenRelativeHeight: 0.026051592
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 8950000636356830748, guid: 3ad7a1cffb2556547a8b7e60fd320431,
-        type: 3}
+    - renderer: {fileID: 3357017270752446854}
   m_Enabled: 1
 --- !u!1 &6822173744682371054
 GameObject:
@@ -156,12 +153,12 @@ GameObject:
   - component: {fileID: 2745771735807974363}
   - component: {fileID: 8375581115802333770}
   - component: {fileID: 945249967021330456}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2745771735807974363
 Transform:
@@ -237,12 +234,13 @@ GameObject:
   - component: {fileID: 2361291012889570991}
   - component: {fileID: 5858230220899392425}
   - component: {fileID: 8958722854893057270}
-  m_Layer: 0
+  - component: {fileID: 8702081860573739435}
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2361291012889570991
 Transform:
@@ -307,3 +305,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8702081860573739435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236569017178176116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 2.9990401, z: 0.39999992}
+  m_Center: {x: 0.00000023841855, y: 1.5004797, z: 0}

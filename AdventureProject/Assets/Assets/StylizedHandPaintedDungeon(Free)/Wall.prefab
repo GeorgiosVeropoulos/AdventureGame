@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 151969276561260536}
   - component: {fileID: 8317468897444666306}
   - component: {fileID: 2865788546097993932}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &151969276561260536
 Transform:
@@ -91,12 +91,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5256618436581244990}
   - component: {fileID: 430771917832873824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &5256618436581244990
 Transform:
@@ -105,16 +105,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5256618436581547038}
-  m_LocalRotation: {x: -0, y: 0.2058008, z: -0, w: 0.9785939}
-  m_LocalPosition: {x: 0.17, y: -13.837891, z: -15.65}
-  m_LocalScale: {x: 2.3793, y: 2.3793, z: 2.3793}
+  m_LocalRotation: {x: 0, y: 0.21566428, z: 0, w: 0.9764676}
+  m_LocalPosition: {x: -41.36878, y: 0.002439499, z: -36.004295}
+  m_LocalScale: {x: 7.0510564, y: 6.1379, z: 7.0510564}
   m_Children:
   - {fileID: 2996912173308592101}
   - {fileID: 3407297253795465873}
   - {fileID: 151969276561260536}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 23.753, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 24.909, z: 0}
 --- !u!205 &430771917832873824
 LODGroup:
   m_ObjectHideFlags: 0
@@ -123,27 +123,24 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5256618436581547038}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.00000023841858, y: 1.5004798, z: 0.00000023841858}
-  m_Size: 2.9990404
+  m_LocalReferencePoint: {x: -0.00000166893, y: 1.5004793, z: 0.00000023841858}
+  m_Size: 2.99904
   m_FadeMode: 1
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.13473406
+  - screenRelativeHeight: 0.2556222
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3382636234245299052, guid: 3ad7a1cffb2556547a8b7e60fd320431,
-        type: 3}
-  - screenRelativeHeight: 0.069411084
+    - renderer: {fileID: 8430757111265371580}
+  - screenRelativeHeight: 0.081530206
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 6898525708782223234, guid: 3ad7a1cffb2556547a8b7e60fd320431,
-        type: 3}
+    - renderer: {fileID: 310156571143389522}
   - screenRelativeHeight: 0.026051592
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 8950000636356830748, guid: 3ad7a1cffb2556547a8b7e60fd320431,
-        type: 3}
+    - renderer: {fileID: 2865788546097993932}
   m_Enabled: 1
 --- !u!1 &6340765859111949988
 GameObject:
@@ -156,12 +153,12 @@ GameObject:
   - component: {fileID: 3407297253795465873}
   - component: {fileID: 9038685634241159936}
   - component: {fileID: 310156571143389522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3407297253795465873
 Transform:
@@ -237,12 +234,13 @@ GameObject:
   - component: {fileID: 2996912173308592101}
   - component: {fileID: 6349876794416057059}
   - component: {fileID: 8430757111265371580}
-  m_Layer: 0
+  - component: {fileID: 4837412611002079503}
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2996912173308592101
 Transform:
@@ -307,3 +305,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4837412611002079503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8871526073714895678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 2.9990401, z: 0.39999992}
+  m_Center: {x: 0.00000023841855, y: 1.5004797, z: 0}

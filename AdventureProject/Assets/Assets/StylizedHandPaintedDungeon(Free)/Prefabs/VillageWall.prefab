@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8410682979352376385}
   - component: {fileID: 2782738470135832016}
   - component: {fileID: 6898525708782223234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8410682979352376385
 Transform:
@@ -92,12 +92,13 @@ GameObject:
   - component: {fileID: 8243472883205423413}
   - component: {fileID: 283394836566258739}
   - component: {fileID: 3382636234245299052}
-  m_Layer: 0
+  - component: {fileID: 8702081860573739435}
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8243472883205423413
 Transform:
@@ -162,6 +163,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8702081860573739435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2372381754716067310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 2.9990401, z: 0.39999992}
+  m_Center: {x: 0.00000023841855, y: 1.5004797, z: 0}
 --- !u!1 &5142983309378302463
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,12 +187,12 @@ GameObject:
   - component: {fileID: 6479129652855603496}
   - component: {fileID: 2926227824724469010}
   - component: {fileID: 8950000636356830748}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6479129652855603496
 Transform:
@@ -253,12 +267,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4733772755456769034}
   - component: {fileID: 887589475960395121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: VillageWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4733772755456769034
 Transform:
@@ -267,7 +281,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6229247520373792897}
-  m_LocalRotation: {x: -0, y: 0.21566771, z: -0, w: 0.97646683}
+  m_LocalRotation: {x: 0, y: 0.21566428, z: 0, w: 0.9764676}
   m_LocalPosition: {x: -5.06, y: -13.837891, z: -13.53}
   m_LocalScale: {x: 2.3793, y: 2.3793, z: 2.3793}
   m_Children:
