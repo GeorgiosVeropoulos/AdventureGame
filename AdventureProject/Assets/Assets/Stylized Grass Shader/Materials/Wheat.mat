@@ -122,7 +122,7 @@ Material:
     - _BendTint: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FadeParams: {r: 27.777777, g: 77.77778, b: 0, a: 0}
+    - _FadeParams: {r: 53.7037, g: 359.25925, b: 1, a: 0}
     - _HueVariation: {r: 1, g: 0.63, b: 0, a: 0.21176471}
     - _NormalParams: {r: 0, g: 0, b: 0, a: 0}
     - _ScalemapInfluence: {r: 0, g: 1, b: 0, a: 0}

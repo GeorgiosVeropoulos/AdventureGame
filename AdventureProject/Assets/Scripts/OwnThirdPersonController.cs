@@ -45,7 +45,9 @@ public class OwnThirdPersonController : MonoBehaviour
         Attack2 = Animator.StringToHash("Attack2");
         block = Animator.StringToHash("Block");
         blocking = Animator.StringToHash("Blocking");
-        Application.targetFrameRate = 60;
+        
+        
+        //Application.targetFrameRate = 60;
     }
 
 

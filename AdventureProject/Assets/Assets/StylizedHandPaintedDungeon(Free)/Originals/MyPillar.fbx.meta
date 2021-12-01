@@ -30,7 +30,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties:
-    - nanolod_0,5_0,25_0,05
+    - nanolod_5_25_5
     - '#BAKERY{"meshName":["Pillar","Pillar.001","Pillar.002"],"padding":[20,20,21],"unwrapper":[1,1,1]}'
     clipAnimations: []
     isReadable: 0
